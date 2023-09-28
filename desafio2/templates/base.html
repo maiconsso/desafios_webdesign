@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <title>{% block title %}title{% endblock %}</title>
+</head>    
+<body>    
+    <header>
+        <img src="/static/image/logo.png" alt="logo">
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/quemsomos">Quem-somos</a> |
+            <a href="/contatos">Contatos</a>
+        </nav>
+    </header>
+
+    {% block image %}{% endblock %}
+
+    <section>
+        {% block section %}{% endblock %}
+    </section>
+
+    <footer>
+        <h3>Todos os direitos reservados</h3>
+    </footer>
+</body> 
+</html>

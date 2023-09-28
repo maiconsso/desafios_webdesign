@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+:root {
+    --pad: 20px 120px;
+}
+
+body{
+    background-image: url('/static/image/fundo2.png');
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--pad);
+}
+
+nav {
+    cursor: pointer;
+    font-size: 16px;
+
+}
+
+section{
+    text-align: justify;
+    padding: var(--pad);
+
+}
+
+.image_home {
+    width: 100%;
+    height: 480px;
+    padding:  0 120px 0 120px;
+    background-color: rgba(128, 128, 128, 0.3);
+    
+}
+
+.for_list {
+    padding: 10px 40px;
+
+}
+
+form {
+    padding: 20px 0;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+}

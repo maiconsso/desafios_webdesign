@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Contatos{% endblock %}
+
+{% block section %}
+
+        <h1>Entre em contato</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta corrupti alias tempore voluptatum? Delectus
+            aut adipisci eum.</p>
+        <hr>
+        <form>
+            <label for="txt">Seu e-mail:</label>
+            <br>
+            <input type="text" id="txt" />
+            <br>
+            <label for="assunto">Assunto:</label>
+            <br>
+            <input type="text" id="assunto" />
+            <br>
+            <label for="descricao">Descrição:</label>
+            <br>
+            <textarea id="descricao"></textarea>
+            <br>
+            <button type="button">Enviar</button>
+            <br>
+        </form>
+
+{% endblock %}  
