@@ -106,8 +106,7 @@ body {
   text-align: var(--bs-body-text-align);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  min-height: 100vh;
-  flex-direction: column;
+
 
 }
 section code {
@@ -158,24 +157,21 @@ section a {
 
 .btn-dark {
   margin-top: 20px;
-  z-index: 1; /* Mantenha o botão acima da sobreposição */
-  position: relative; /* Adicione essa linha para definir a posição do botão */
+  z-index: 1; 
+  position: relative; 
 }
-
+.image-docker {
+  display: block;
+  margin: 0 auto; /* Centraliza horizontalmente */
+  max-width: 100%; /* Torna a imagem proporcional ao redimensionamento */
+  height: auto; /* Mantém a proporção da imagem */
+}
 #about img {
   width: 200px;
   border-radius: 50%;
   float: left;
   margin-right: 20px;
 }
-
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-
 
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
