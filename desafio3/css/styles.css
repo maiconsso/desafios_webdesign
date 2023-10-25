@@ -124,7 +124,7 @@ section code {
 section a {
   text-decoration: none;
   color: var(--blue-ncs);
-  font-size: 16px;
+  font-size: 18px;
 }
 
 
@@ -162,11 +162,11 @@ section a {
   position: relative; /* Adicione essa linha para definir a posição do botão */
 }
 
-.image-docker {
-  display: block;
-  margin: 0 auto; /* Centraliza horizontalmente */
-  max-width: 100%; /* Torna a imagem proporcional ao redimensionamento */
-  height: auto; /* Mantém a proporção da imagem */
+#about img {
+  width: 200px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 20px;
 }
 
 #footer {
