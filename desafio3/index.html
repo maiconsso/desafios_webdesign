@@ -46,6 +46,7 @@
         </div>
     </header>
     
+    
     <!-- About section -->
     <section id="about">
         <div class="container">
@@ -111,51 +112,54 @@
     <section id="guide">
         <div class="container">
             <div class="guide text-dark">
-
+    
                 <h2>Instalando o Docker</h2>
-                <p>Para começar a usar o Docker, siga estas instruções para instalar o Docker no seu sistema
-                    operacional:</p>
-                
-                <h4>Linux (Ubuntu)</h4>
-                
-                <p>Se o seu sistema operacional for Linux, como o Ubuntu, siga os seguintes passos para instalar o
-                    Docker:</p>
-                
+                <p>Para começar a usar o Docker, siga estas instruções para instalar o Docker no seu sistema operacional:</p>
+    
+                <h3>Linux (Ubuntu)</h3>
+    
+                <p>Se o seu sistema operacional for Linux, como o Ubuntu, siga os seguintes passos para instalar o Docker:</p>
+    
                 <ol>
-                    <li>Abra o terminal. Baixe as últimas atualizações do sistema:<br>
-                        <code>$ sudo apt update && sudo apt upgrade</code>
+                    <li>
+                        <p>Abra o terminal. Baixe as últimas atualizações do sistema:</p>
+                        <pre><code>$ sudo apt update && sudo apt upgrade</code></pre>
                     </li>
-                    <li>Instale o Docker utilizando o repositório do Ubuntu 22.04:<br>
-                        <code>$ sudo apt install docker.io</code>
+                    <li>
+                        <p>Instale o Docker utilizando o repositório do Ubuntu 22.04:</p>
+                        <pre><code>$ sudo apt install docker.io</code></pre>
                     </li>
-                    <li>Inicie o Docker:<br>
-                        <code>$ sudo systemctl start docker</code>
+                    <li>
+                        <p>Inicie o Docker:</p>
+                        <pre><code>$ sudo systemctl start docker</code></pre>
                     </li>
-                    <li>Garanta que ele seja iniciado após a reinicialização:<br>
-                        <code>$ sudo systemctl enable docker</code>
+                    <li>
+                        <p>Garanta que ele seja iniciado após a reinicialização:</p>
+                        <pre><code>$ sudo systemctl enable docker</code></pre>
                     </li>
-                    <li>Caso queira verificar a versão instalada:<br>
-                        <code>$ docker -v</code>
+                    <li>
+                        <p>Caso queira verificar a versão instalada:</p>
+                        <pre><code>$ docker -v</code></pre>
                     </li>
                 </ol>
-                
-                <h4>Windows:</h4>
-                <p>1. Baixe o instalador do Docker para Windows a partir do site oficial: <a
-                        href="https://www.docker.com/products/docker-desktop" target="_blank">Download para Windows</a></p>
-                <p>2. Siga as instruções de instalação do instalador.</p>
-                <p>3. Após a instalação, verifique a versão do Docker com:<br>
-                    <code>docker --version</code>
+    
+                <h3>Windows</h3>
+                <p>1. Baixe o instalador do Docker para Windows a partir do site oficial:
+                    <a href="https://www.docker.com/products/docker-desktop" target="_blank">Download para Windows</a>
                 </p>
-                
-                <h4>Mac:</h4>
-                <p>1. Baixe o instalador do Docker para Mac a partir do site oficial: <a
-                        href="https://www.docker.com/products/docker-desktop" target="_blank">Download para Mac</a></p>
                 <p>2. Siga as instruções de instalação do instalador.</p>
-                <p>3. Após a instalação, verifique a versão do Docker com:<br>
-                    <code>docker --version</code>
+                <p>3. Após a instalação, verifique a versão do Docker com:</p>
+                <pre><code>docker --version</code></pre>
+    
+                <h3>Mac</h3>
+                <p>1. Baixe o instalador do Docker para Mac a partir do site oficial:
+                    <a href="https://www.docker.com/products/docker-desktop" target="_blank">Download para Mac</a>
                 </p>
-                
+                <p>2. Siga as instruções de instalação do instalador.</p>
+                <p>3. Após a instalação, verifique a versão do Docker com:</p>
+                <pre><code>docker --version</code></pre>
 
+                <section>
                 <h2>Lista de Comandos</h2>
                 <p>Aqui está uma lista de comandos Docker básicos e suas descrições:</p>
                 <ul>
@@ -207,124 +211,104 @@
                     <li><strong>wait:</strong> Bloqueia até que um contêiner pare e, em seguida, exibe o código de
                         saída.</li>
                 </ul>
-                <h2>Iniciando com Docker</h2>
+                </section>
+                <section>
+                    <h2>Iniciando com Docker</h2>
+                    <p>Vamos começar nossa jornada no mundo do Docker executando um contêiner a partir da imagem do Ubuntu.</p>
+            
+                    <p>Em um terminal ou prompt de comando, digite o seguinte comando:</p>
+            
+                    <pre><code>$ docker run -it ubuntu /bin/bash</code></pre>
+            
+                    <p>Isso iniciará um contêiner interativo do Ubuntu, onde você pode executar comandos sem a necessidade de usar o sudo, pois você já possui privilégios de superusuário (root).</p>
+            
+                    <p>Teste executando os comandos a seguir:</p>
+            
+                    <pre><code>$ apt-get update</code></pre>
+            
+                    <p>Agora você está dentro de um ambiente interativo Docker.</p>
+            
+                    <p>Para listar os contêineres em execução, utilize o comando:</p>
+            
+                    <pre><code>$ docker ps</code></pre>
+            
+                    <p>Para visualizar o último contêiner criado, use:</p>
+            
+                    <pre><code>$ docker ps -l</code></pre>
+            
+                    <p>Se desejar listar todos os contêineres, incluindo os inativos, utilize:</p>
+            
+                    <pre><code>$ docker ps -a</code></pre>
+            
+                    <p>Para interromper a execução de um contêiner em execução, digite:</p>
+            
+                    <pre><code>$ docker stop ID_do_Contêiner</code></pre>
+            
+                    <p>Você pode encontrar o ID do contêiner na saída do comando <pre><code>docker ps</code></pre>.</p>
+            
+                    <p>Se desejar compartilhar ou hospedar uma imagem que você configurou, crie uma conta no Docker Hub e faça o upload da imagem para o repositório com os seguintes comandos:</p>
+            
+                    <pre><code>$ docker login -u username-docker</code></pre>
+                    <pre><code>$ docker push username-docker/nome-da-imagem</code></pre>
+            
+                    <p>Após o upload, sua imagem estará disponível no Docker Hub.</p>
+                </section>
+            
+                <section>
+                    <h2>Criando uma Aplicação Web com Docker</h2>
+                    <h4>Passo 1: Preparando os Arquivos</h4>
+                    <p>Crie os arquivos necessários para sua aplicação web, incluindo um arquivo HTML e um arquivo CSS. Você pode usar qualquer editor de texto ou ambiente de desenvolvimento de sua escolha para criar esses arquivos.</p>
+            
+                    <p>Por favor, note que neste tutorial não forneceremos o código HTML e CSS específico. No entanto, você pode substituir esta seção pelo seu próprio código HTML e CSS.</p>
+            
+                    <h4>Passo 2: Criando o Dockerfile</h4>
+                    <pre><code>
+# Use a imagem base do Nginx como servidor web
+FROM nginx:latest
 
-                <p>Vamos começar executando um contêiner da imagem do Ubuntu para começar nossa jornada no mundo do
-                    Docker.</p>
+# Crie um diretório no contêiner onde você deseja colocar o conteúdo
+RUN mkdir -p /usr/share/nginx/html/myapp
 
-                <p>Em um terminal ou prompt de comando, digite o seguinte comando:</p>
+# Copie todos os arquivos da pasta local para o diretório do servidor Nginx no contêiner
+COPY . /usr/share/nginx/html/myapp
 
-                <code>$ docker run -it ubuntu /bin/bash</code>
+# Exponha a porta 80 para o servidor web Nginx
+EXPOSE 80
 
-                <p>Ao rodar esse comando, você entrará no contêiner Ubuntu em modo interativo. Agora você pode executar
-                    comandos dentro do contêiner sem precisar do sudo, pois você já tem privilégios de superusuário
-                    (root).</p>
+# Comando para iniciar o servidor Nginx
+CMD ["nginx", "-g", "daemon off;"]
 
-                <p>Teste executando os comandos a seguir:</p>
-
-                <code>$ apt-get update</code>
-
-                <p>Agora você tem um ambiente interativo para experimentar com o Docker.</p>
-
-                <p>Para listar os contêineres, use o comando:</p>
-
-                <code>$ docker ps</code>
-
-                <p>Para exibir o último contêiner criado, use:</p>
-
-                <code>$ docker ps -l</code>
-
-                <p>Se você desejar listar todos os contêineres, incluindo os inativos, utilize:</p>
-
-                <code>$ docker ps -a</code>
-
-                <p>Para parar um contêiner em execução, digite:</p>
-
-                <code>$ docker stop id-do-contêiner</code>
-
-                <p>O ID do contêiner pode ser encontrado na saída do comando </br><code>docker ps</code></p>
-
-                <p>Se você desejar compartilhar ou hospedar uma imagem que você configurou, crie uma conta no Docker Hub
-                    e faça o upload da imagem para o repositório com os seguintes comandos:</p>
-
-                <code>$ docker login -u username-docker</code><br>
-                <code>$ docker push username-docker/nome-da-imagem</code>
-
-                <p>Após o upload, sua imagem estará disponível no Docker Hub.</p>
-
-                <h2>Criando uma Aplicação Web com Docker</h2>
-
-                <p>Neste tutorial, você aprenderá como criar e executar uma aplicação web dentro de um contêiner Docker.
-                    Vamos utilizar um arquivo HTML e um arquivo CSS para criar uma aplicação web simples.</p>
-
-                <h2>Passo 1: Preparando os Arquivos</h2>
-
-                <p>Crie os arquivos necessários para sua aplicação web, incluindo um arquivo HTML e um arquivo CSS. Você
-                    pode usar qualquer editor de texto ou ambiente de desenvolvimento de sua escolha para criar esses
-                    arquivos.</p>
-
-                <p>Por favor, note que neste tutorial não forneceremos o código HTML e CSS específico. No entanto, você
-                    pode substituir esta seção pelo seu próprio código HTML e CSS.</p>
-
-                <h2>Passo 2: Criando o Dockerfile</h2>
-
-                <code>
-                        # Use a imagem base do Nginx como servidor web<br>
-                        FROM nginx:latest<br><br>
-
-                        # Copie os arquivos HTML e CSS para o diretório do servidor Nginx<br>
-                        COPY index.html /usr/share/nginx/html/<br>
-                        COPY styles.css /usr/share/nginx/html/<br><br>
-
-                        # Exponha a porta 80 para o servidor web Nginx<br>
-                        EXPOSE 80<br><br>
-
-                        # Comando para iniciar o servidor Nginx<br>
-                        CMD ["nginx", "-g", "daemon off;"]<br>
-                        </code>
-
-                <p>Basta copiar o código acima e colá-lo em um arquivo chamado "Dockerfile" em um diretório onde você
-                    tenha os arquivos HTML (index.html) e CSS (styles.css) que deseja servir com o Nginx. Em seguida,
-                    você pode criar uma imagem Docker a partir deste Dockerfile e executar um contêiner para hospedar
-                    sua aplicação web.</p>
-
-                <h2>Passo 3: Construindo a Imagem Docker</h2>
-
-                <p>Use o comando <code>docker build</code> para criar uma imagem Docker a partir do seu Dockerfile e dos
-                    arquivos HTML e CSS. Certifique-se de estar no diretório onde os arquivos estão localizados.</p>
-
-                <code>$ docker build -t minha-aplicacao-docker .</code>
-
-                <h2>Passo 4: Executando o Contêiner</h2>
-
-                <p>Agora que você tem uma imagem Docker, execute um contêiner a partir dessa imagem. Você pode mapear a
-                    porta do contêiner para a porta do host para acessar sua aplicação.</p>
-
-                <code>$ docker run -d -p 8080:80 minha-aplicacao-docker</code>
-
-                <h2>Passo 5: Acessando Sua Aplicação</h2>
-
-                <p>Agora você pode acessar sua aplicação web em um navegador visitando
-                    <code>http://localhost:8080</code>. Sua aplicação estará em execução dentro do contêiner Docker.</p>
-
-                <p>Lembre-se de que os detalhes específicos da sua aplicação, como o conteúdo do arquivo HTML e CSS,
-                    devem ser criados por você de acordo com suas necessidades.</p>
+                    </code></pre>
+            
+                    <p>Copie o código acima e cole-o em um arquivo chamado "Dockerfile" no mesmo diretório onde você tem os arquivos HTML (index.html) que deseja servir com o Nginx. Em seguida, você pode criar uma imagem Docker a partir deste Dockerfile e executar um contêiner para hospedar sua aplicação web.</p>
+            
+                    <h4>Passo 3: Construindo a Imagem Docker</h4>
+                    <p>Use o comando <pre><code>docker build</pre></code> para criar uma imagem Docker a partir do seu Dockerfile e dos arquivos HTML e CSS. Certifique-se de estar no diretório onde os arquivos estão localizados.</p>
+            
+                    <pre><code>$ docker build -t minha-aplicacao-docker .</code></pre>
+            
+                    <h4>Passo 4: Executando o Contêiner</h4>
+                    <p>Agora que você tem uma imagem Docker, execute um contêiner a partir dessa imagem. Você pode mapear a porta do contêiner para a porta do host para acessar sua aplicação.</p>
+            
+                    <pre><code>$ docker run -d -p 8080:80 minha-aplicacao-docker</code></pre>
+            
+                    <h4>Passo 5: Acessando Sua Aplicação</h4>
+                    <p>Agora você pode acessar sua aplicação web em um navegador visitando <pre><code>http://localhost:8080</code></pre></p>
+            
+                    <p>Lembre-se de que os detalhes específicos da sua aplicação, como o conteúdo do arquivo HTML e CSS, devem ser criados por você de acordo com suas necessidades.</p>
+                </section>
+            
+                <section>
                     <h2>Links Úteis e Referências Docker</h2>
-
                     <h4 id="instalar"><a href="https://docs.docker.com/get-docker/" target="_blank">Como Instalar o Docker</a></h4>
-                    
                     <h4 id="docker-compose"><a href="https://docs.docker.com/compose/install/" target="_blank">Como Instalar o Docker Compose</a></h4>
-                    
                     <h4 id="docker-hub"><a href="https://hub.docker.com/" target="_blank">Docker Hub</a></h4>
-                    
                     <h4 id="documentacao"><a href="https://docs.docker.com/" target="_blank">Documentação Docker</a></h4>
-                    
                     <h4 id="exemplos"><a href="https://docs.docker.com/samples/" target="_blank">Exemplos de Aplicações Docker</a></h4>
-                    
+                </section>
             </div>
-        </div>
+        </div> 
     </section>
-
     <!-- conclusion section-->
     <section id="conclusion">
         <div class="container">
@@ -342,10 +326,9 @@
             </div>
         </div>
     </section>
-    <!-- Footer-->
-    <footer class="py-3 bg-dark">
-        <div class="container px-4">
-            <p class="m-0 text-center text-white">Copyright &copy; Docker 2023</p>
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p class="m-0">Docker</p>
         </div>
     </footer>
     <!-- Bootstrap core JS-->
@@ -353,5 +336,4 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
 </body>
-
 </html>
